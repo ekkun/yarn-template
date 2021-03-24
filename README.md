@@ -1,55 +1,96 @@
-# frontend_develop_environment
+# Yarn Template
 
-## command
+## npm パッケージをインストール
 
-``` terminal
+```terminal
+#プロジェクトのディレクトリに移動して
 // npm install
 $ yarn
+```
 
-// start dev server and watch pug/css/js
+## yarn の監視
+
+```
 $ yarn start
-
 // mode development
-$ yarn dev
+// $ yarn dev
+```
 
-// mode production
+## 納品ファイル生成
+
+デプロイ用のファイル一式を生成
+
+```
 $ yarn build
 ```
 
-## develop
+## ディレクトリ構成
 
-- webpackでbundle
-    - ES6(@babel/polyfill(async/await対応))
-    - TypeScript
-    - Sass
-    - autoprefixerを自動生成
-    - productionモードでcss/jsファイル圧縮
-    - imageファイル圧縮
-    - WebFont対応(woff/eot/ttf/svg)
-    - media対応(mp4/webm/ogg)
-    - jQueryに依存したライブラリに対応
-- npm scriptsでタスクランナー
-- jQuery
-- font「NotoSansJP」設定
-- fontawesomeのcssをnode_modulesで管理
-- pugでHTMLコーディング
-    - _include
-    - index.pug
-    - buildすると`_include`を削除
-- cssファイル(smacss設計)
-    - base
-    - function
-    - layout
-    - mixin
-    - module
-    - responsive
-    - state
-    - variable
-    - animation
-    - font
-- Lint
-    - ESLint
-    - StyleLint
-    
-## reference
+./src/ 内のファイルを編集
+
+- pug -> html
+- js -> babel -> js
+- sass -> css
+
+```
+├─ node_modules/
+│  └─ パッケージ各種
+│
+├─ dist/（ビルド後、納品ファイルがここに生成される）
+│  ├─ assets/
+│  │  ├─ fonts/
+│  │  ├─ images/
+│  │  ├─ css/
+│  │  └─ js/
+│  └─ index.html など
+│
+├─ src/（ビルド前のソース）
+│  ├─ fonts/
+│  ├─ html/ (直にHTMLを生成する場合)
+│  ├─ images/
+│  ├─ javascript/
+│  ├─ js/
+│  │  ├─ _app/
+│  │  ├─ _core/
+│  │  └─ functions.js など
+│  ├─ pug/
+│  │  ├─ _template/
+│  │  └─ index.pug
+│  └─ sass/
+│      ├─ foundation/
+│      ├─ layout/
+│      ├─ object/
+│      ├─ page/
+│      │  └─ index/
+│      ├─ style.scss
+│      └─ index.scss
+│
+├─ .browserslistrc
+├─ .eslintrc
+├─ babel.config.js
+├─ package.json
+├─ stylelint.config.js
+├─ tsconfig.json
+├─ webpack.config.js
+└─ README.md
+```
+
+## パッケージのバージョン管理
+
+更新、アップデートの確認に npm-check-updates をインストールする
+
+```
+$ sudo npm install -g npm-check-updates
+```
+
+ncu コマンドでアップデート
+
+```
+$ ncu -u
+```
+
+## 参考・参照
+
+- [frontend_develop_environment](https://github.com/macotok/frontend_develop_environment)
+
 - [stylelint.config.js](https://gist.github.com/buchiya4th/f4ca1be2ab98ee5a8098fa68a93e752c)
