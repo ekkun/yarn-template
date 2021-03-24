@@ -4,17 +4,21 @@
 
 ```terminal
 #プロジェクトのディレクトリに移動して
-// npm install
 $ yarn
 ```
+
+<!-- npm install -->
 
 ## yarn の監視
 
 ```
 $ yarn start
-// mode development
-// $ yarn dev
 ```
+
+<!--
+ mode development
+$ yarn dev
+-->
 
 ## 納品ファイル生成
 
