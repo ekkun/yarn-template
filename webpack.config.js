@@ -126,6 +126,10 @@ const app = {
         from: path.resolve(__dirname, 'src/assets/media/'),
         to: path.resolve(__dirname, 'dist/assets/media/'),
       },
+      {
+        from: path.resolve(__dirname, 'src/assets/json/'),
+        to: path.resolve(__dirname, 'dist/assets/json/'),
+      },
     ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
