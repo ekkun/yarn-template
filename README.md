@@ -42,17 +42,20 @@ $ yarn build
 │
 ├─ dist/（ビルド後、納品ファイルがここに生成される）
 │  ├─ assets/
-│  │  ├─ fonts/
-│  │  ├─ images/
 │  │  ├─ css/
-│  │  └─ js/
+│  │  ├─ images/
+│  │  ├─ js/
+│  │  ├─ json/
+│  │  ├─ media/
+│  │  └─ webfonts/
 │  └─ index.html など
 │
 ├─ src/（ビルド前のソース）
-│  ├─ fonts/
-│  ├─ html/ (直にHTMLを生成する場合)
-│  ├─ images/
-│  ├─ javascript/
+│  ├─ assets/
+│  │  ├─ images/
+│  │  ├─ json/
+│  │  ├─ media/
+│  │  └─ webfonts/
 │  ├─ js/
 │  │  ├─ _app/
 │  │  ├─ _core/
@@ -77,20 +80,6 @@ $ yarn build
 ├─ tsconfig.json
 ├─ webpack.config.js
 └─ README.md
-```
-
-## パッケージのバージョン管理
-
-更新、アップデートの確認に npm-check-updates をインストールする
-
-```
-$ sudo npm install -g npm-check-updates
-```
-
-ncu コマンドでアップデート
-
-```
-$ ncu -u
 ```
 
 ## 参考・参照
